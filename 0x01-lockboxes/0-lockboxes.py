@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """
-    This module contains canUnlockAll function which 
+    This module contains canUnlockAll function which
     determines if all boxes can be unlocked
 """
+
+
 def canUnlockAll(boxes):
     """
     Determines if all boxes can be unlocked starting from the first box
