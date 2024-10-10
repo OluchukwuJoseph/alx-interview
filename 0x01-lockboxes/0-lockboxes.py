@@ -16,6 +16,13 @@ def canUnlockAll(boxes):
     Returns:
     bool: True if all boxes can be unlocked, False otherwise.
     """
+    if not isinstance(boxes, list) or len(boxes) == 0:
+        return False
+    
+    for box in boxes:
+        if not isinstance(box, list):
+            return False
+
     # Queue to track which boxes and their contents (keys) we need to process
     queue = [(0, boxes[0])]
     # List to track visited (unlocked) boxes
