@@ -32,3 +32,9 @@ print(f'EXPECTED: True --- Returned -> {canUnlockAll(boxes)}')
 
 boxes = [[1, 4], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]
 print(f'EXPECTED: False --- Returned -> {canUnlockAll([0, [2]])}')
+
+boxes = [[], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]
+print(f'EXPECTED: False --- Returned -> {canUnlockAll([0, [2]])}')
+
+boxes = None
+print(f'EXPECTED: False --- Returned -> {canUnlockAll([0, [2]])}')
