@@ -47,8 +47,7 @@ def canUnlockAll(boxes):
             if key >= len(boxes):
                 continue
             queue.append((key, boxes[key]))
+        if len(visited) == len(boxes):
+            return True
 
-    # After processing, check if we've visited all the boxes
-    if len(visited) != len(boxes):
-        return False
-    return True
+    return False
