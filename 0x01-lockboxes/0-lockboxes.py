@@ -16,7 +16,7 @@ def canUnlockAll(boxes):
     Returns:
     bool: True if all boxes can be unlocked, False otherwise.
     """
-    if not isinstance(boxes, list) or len(boxes) == 0:
+    if not boxes or not isinstance(boxes, list) or len(boxes) == 0:
         return False
 
     for box in boxes:
