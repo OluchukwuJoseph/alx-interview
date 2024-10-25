@@ -30,6 +30,7 @@ signal.signal(signal.SIGINT, handle_sigint)
 
 # Read lines from standard input
 for line in sys.stdin:
+    log_entry_count += 1
     line_pattern = (
         r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'   # IP address
         r' - '                                   # Space-dash-space
@@ -41,13 +42,12 @@ for line in sys.stdin:
 
     match = re.match(line_pattern, line)
     if match:
-        log_entry_count += 1
         status_code = match.group(1)
         size = match.group(2)
 
         # Update metrics dictionary
         metrics['size'] = metrics.get('size', 0) + int(size)
         metrics[status_code] = metrics.get(status_code, 0) + 1
-        # Print metrics every 10 entries
-        if log_entry_count % 10 == 0:
-            print_metrics()
+    # Print metrics every 10 entries
+    if log_entry_count % 10 == 0:
+        print_metrics()
