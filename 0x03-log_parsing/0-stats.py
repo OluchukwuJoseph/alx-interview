@@ -13,10 +13,10 @@ metrics = {}
 def print_metrics() -> None:
     """ Prints the accumulated log metrics. """
     print(f"File size: {metrics['size']}")
-    for key, value in metrics.items():
+    for key in sorted(metrics.keys()):
         if key == 'size':
             continue
-        print(f"{key}: {value}")
+        print(f"{key}: {metrics[key]}")
 
 
 def handle_sigint(signal_number: int, frame: int) -> None:
