@@ -22,6 +22,7 @@ def print_metrics() -> None:
 def handle_sigint(signal_number: int, frame: int) -> None:
     """ Handles SIGINT signal to print metrics before exiting. """
     print_metrics()
+    sys.exit(0)
 
 
 # Register the SIGINT signal handler
