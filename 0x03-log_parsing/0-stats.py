@@ -10,7 +10,7 @@ log_entry_count = 0
 metrics = {}
 
 
-def print_metrics():
+def print_metrics() -> None:
     """ Prints the accumulated log metrics. """
     print(f"File size: {metrics['size']}")
     for key, value in metrics.items():
@@ -19,7 +19,7 @@ def print_metrics():
         print(f"{key}: {value}")
 
 
-def handle_sigint(signal_number, frame):
+def handle_sigint(signal_number: int, frame: int) -> None:
     """ Handles SIGINT signal to print metrics before exiting. """
     print_metrics()
 
