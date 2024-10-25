@@ -12,7 +12,7 @@ metrics = {}
 
 def print_metrics() -> None:
     """ Prints the accumulated log metrics. """
-    print(f"File size: {metrics['size']}")
+    print(f"File size: {metrics.get('size', 0)}")
     for key in sorted(metrics.keys()):
         if key == 'size':
             continue
