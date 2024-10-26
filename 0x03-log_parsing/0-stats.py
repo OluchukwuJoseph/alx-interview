@@ -39,7 +39,7 @@ try:
             # Update metrics dictionary
             metrics['size'] = metrics.get('size', 0) + int(size)
             metrics[status_code] = metrics.get(status_code, 0) + 1
-        # Print metrics every 10 entries
+        # Print metrics after every 10 entries
         if log_entry_count % 10 == 0:
             print_metrics()
 except KeyboardInterrupt:
