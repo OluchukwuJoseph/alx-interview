@@ -24,7 +24,7 @@ try:
         log_entry_count += 1
         line_pattern = (
             r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'   # IP address
-            r' - '                                   # Space-dash-space
+            r'[ ]?-[ ]?'                                   # Space-dash-space
             r'\[\d{4}-\d{2}-\d{2} '                  # Date (YYYY-MM-DD)
             r'\d{2}:\d{2}:\d{2}(?:\.\d{1,6})?\]'     # Time (HH:MM:SS)
             r' "GET /projects/260 HTTP/1\.1"'        # Request method and path
