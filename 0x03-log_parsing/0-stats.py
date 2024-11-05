@@ -44,5 +44,6 @@ try:
             print_metrics()
 except KeyboardInterrupt:
     # Handle keyboard interruption
-    print_metrics()
     sys.exit(1)
+finally:
+    print_metrics()
