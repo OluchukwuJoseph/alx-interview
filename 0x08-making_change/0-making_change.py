@@ -17,7 +17,7 @@ def makeChange(coins: List[int], total: int) -> int:
     """
     # If total is less than 1 return -1
     if total <= 0:
-        return -1
+        return 0
 
     # Initialize dp array with max value (total + 1)
     memory = [float('inf')] * (total + 1)
@@ -26,11 +26,11 @@ def makeChange(coins: List[int], total: int) -> int:
     memory[0] = 0
 
     # Compute minimum coins for each amount from 1 to total
-    for item in range(1, total + 1):
+    for amount in range(1, total + 1):
         for coin in coins:
-            if coin <= item:
-                sub_problem = item - coin
-                memory[item] = min(memory[sub_problem] + 1, memory[item])
+            if coin <= amount:
+                sub_problem = amount - coin
+                memory[amount] = min(memory[sub_problem] + 1, memory[amount])
 
     # Return -1 if no solution found, otherwise return minimum coins
     return memory[total] if memory[total] != float('inf') else -1
