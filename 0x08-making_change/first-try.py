@@ -4,7 +4,7 @@ from typing import List
 import time
 
 
-def makeChange(coins: List, total: int):
+def makeChange(coins: List[int], total: int) -> int:
     if total == 0:
         return 0
 

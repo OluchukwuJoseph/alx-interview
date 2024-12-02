@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ This module conatins the makeChange function """
 from typing import List
-import time
 
 
 def makeChange(coins: List[int], total: int) -> int:
