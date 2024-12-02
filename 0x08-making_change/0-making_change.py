@@ -13,7 +13,8 @@ def makeChange(coins: List[int], total: int) -> int:
 
     Returns:
         int: The minimum number of coins needed to achieve the total,
-             or -1 if it is not possible.
+             or -1 if it is not possible
+             or 0 if total is less than or equal to zero (0).
     """
     # If total is less than 1 return -1
     if total <= 0:
@@ -29,8 +30,7 @@ def makeChange(coins: List[int], total: int) -> int:
     for amount in range(1, total + 1):
         for coin in coins:
             if coin <= amount:
-                sub_problem = amount - coin
-                memory[amount] = min(memory[sub_problem] + 1, memory[amount])
+                memory[amount] = min(memory[amount - coin] + 1, memory[amount])
 
     # Return -1 if no solution found, otherwise return minimum coins
     return memory[total] if memory[total] != float('inf') else -1
