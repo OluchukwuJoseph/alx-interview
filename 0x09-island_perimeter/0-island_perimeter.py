@@ -68,6 +68,9 @@ def island_perimeter(grid: List[List[int]]) -> int:
     and if there is a neighboring land cell (to the top or left),
     it subtracts 2 from the perimeter for each shared edge.
     """
+    if (grid is None):
+        return 0
+
     perimeter = 0
 
     for row_idx, row in enumerate(grid):
