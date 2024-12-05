@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """ This module contains the `island_perimeter` function. """
-from typing import List
 
 
-def check_top(grid: List[List[int]], row_idx: int, idx: int) -> bool:
+def check_top(grid, row_idx, idx):
     """
     Checks if the cell directly above the current cell is land (1).
 
@@ -23,7 +22,7 @@ def check_top(grid: List[List[int]], row_idx: int, idx: int) -> bool:
     return True if grid[row_idx - 1][idx] == 1 else False
 
 
-def check_left(grid: List[List[int]], row_idx: int, idx: int) -> bool:
+def check_left(grid, row_idx, idx):
     """
     Checks if the cell directly to the left of the current cell is land (1).
 
@@ -42,7 +41,7 @@ def check_left(grid: List[List[int]], row_idx: int, idx: int) -> bool:
     return True if grid[row_idx][idx - 1] == 1 else False
 
 
-def island_perimeter(grid: List[List[int]]) -> int:
+def island_perimeter(grid):
     """
     Calculates the perimeter of an island on a 2D grid.
 
