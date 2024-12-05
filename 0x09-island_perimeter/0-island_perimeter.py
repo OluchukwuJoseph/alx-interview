@@ -1,15 +1,5 @@
 #!/usr/bin/python3
-"""
-This module contains the `island_perimeter` function.
-It computes the perimeter of an island represented by 1's on a 2D grid.
-The grid is made of 1's (land) and 0's (water).
-The function calculates the perimeter of the island formed by the 1's.
-
-Functions:
-- check_top: Checks if there is land (1) above a given cell.
-- check_left: Checks if there is land (1) to the left of a given cell.
-- island_perimeter: Calculates the perimeter of an island on a grid.
-"""
+""" This module contains the `island_perimeter` function. """
 from typing import List
 
 
