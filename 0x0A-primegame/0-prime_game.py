@@ -70,7 +70,9 @@ def isWinner(x, nums):
     game_results = [0, 0]
 
     # Play each round
-    for round_limit in nums:
+    for idx, round_limit in enumerate(nums):
+        if x == idx:
+            break
         round_numbers = list(range(1, round_limit + 1))
         prime_count = len(find_prime_numbers(round_numbers))
 
